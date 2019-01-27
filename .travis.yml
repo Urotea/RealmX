@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: RealmX.xcodeproj # path to your xcodeproj folder
-xcode_scheme: RealmXTests
-xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
+xcode_scheme: RealmX
+xcode_destination: 'platform=iOS Simulator,OS=12.1,name=iPhone X'
