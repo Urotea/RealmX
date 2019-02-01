@@ -3,3 +3,6 @@ osx_image: xcode10.1
 xcode_project: RealmX.xcodeproj # path to your xcodeproj folder
 xcode_scheme: RealmX
 xcode_destination: 'platform=iOS Simulator,OS=12.1,name=iPhone X'
+
+before_install:
+  - carthage bootstrap --platform ios
