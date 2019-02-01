@@ -4,8 +4,8 @@ xcode_project: RealmX.xcodeproj # path to your xcodeproj folder
 xcode_scheme: RealmX
 xcode_destination: 'platform=iOS Simulator,OS=12.1,name=iPhone X'
 
-before_install:
-  - brew update
-  - carthage bootstrap --platform ios
 script:
+  - brew update
+  - brew upgrade carthage
+  - carthage bootstrap --platform ios
   - xcodebuild -project=./RealmX.xcodeproj -scheme RealmXTests -destination 'platform=iOS Simulator,OS=12.1,name=iPhone X' test
