@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		DB7698DD21FD6C4100617F83 /* RealmX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7698D321FD6C4100617F83 /* RealmX.framework */; };
 		DB7698E221FD6C4100617F83 /* RealmXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7698E121FD6C4100617F83 /* RealmXTests.swift */; };
-		DB7698E421FD6C4100617F83 /* RealmX.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7698D621FD6C4100617F83 /* RealmX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB7698F421FD6CDF00617F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7698F321FD6CDF00617F83 /* AppDelegate.swift */; };
 		DB7698F621FD6CDF00617F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7698F521FD6CDF00617F83 /* ViewController.swift */; };
 		DB7698F921FD6CDF00617F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7698F721FD6CDF00617F83 /* Main.storyboard */; };
 		DB7698FB21FD6CE000617F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7698FA21FD6CE000617F83 /* Assets.xcassets */; };
 		DB7698FE21FD6CE000617F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB7698FC21FD6CE000617F83 /* LaunchScreen.storyboard */; };
+		DB76990621FDB8BE00617F83 /* RealmX in Resources */ = {isa = PBXBuildFile; fileRef = DB76990521FDB8BE00617F83 /* RealmX */; };
+		DBD7384A21FDFC1B00631EF3 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7384921FDFC1B00631EF3 /* Nimble.framework */; };
+		DBD7384C21FDFC2700631EF3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7384B21FDFC2700631EF3 /* Quick.framework */; };
+		DBD7384F21FDFC9C00631EF3 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD7384E21FDFC9C00631EF3 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD7385121FDFCAF00631EF3 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD7385021FDFCAF00631EF3 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD7385321FDFD0700631EF3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385221FDFD0700631EF3 /* RealmSwift.framework */; };
+		DBD7385521FDFD1400631EF3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385421FDFD1400631EF3 /* Realm.framework */; };
+		DBD7385721FDFD3000631EF3 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385621FDFD3000631EF3 /* RxSwift.framework */; };
+		DBD7385A21FDFDC700631EF3 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385921FDFDC700631EF3 /* RxBlocking.framework */; };
+		DBD7385C21FDFDDD00631EF3 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD7385B21FDFDDD00631EF3 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD7385E21FDFE5B00631EF3 /* RealmX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7385D21FDFE5B00631EF3 /* RealmX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +37,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DBD7384D21FDFC4500631EF3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBD7385C21FDFDDD00631EF3 /* RxBlocking.framework in CopyFiles */,
+				DBD7385121FDFCAF00631EF3 /* Quick.framework in CopyFiles */,
+				DBD7384F21FDFC9C00631EF3 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DB7698D321FD6C4100617F83 /* RealmX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RealmX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB7698D621FD6C4100617F83 /* RealmX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmX.h; sourceTree = "<group>"; };
 		DB7698D721FD6C4100617F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7698DC21FD6C4100617F83 /* RealmXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7698E121FD6C4100617F83 /* RealmXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmXTests.swift; sourceTree = "<group>"; };
@@ -41,6 +65,17 @@
 		DB7698FA21FD6CE000617F83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB7698FD21FD6CE000617F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB7698FF21FD6CE000617F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB76990521FDB8BE00617F83 /* RealmX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RealmX; sourceTree = SOURCE_ROOT; };
+		DBD7384921FDFC1B00631EF3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		DBD7384B21FDFC2700631EF3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		DBD7384E21FDFC9C00631EF3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		DBD7385021FDFCAF00631EF3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		DBD7385221FDFD0700631EF3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		DBD7385421FDFD1400631EF3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		DBD7385621FDFD3000631EF3 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		DBD7385921FDFDC700631EF3 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		DBD7385B21FDFDDD00631EF3 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		DBD7385D21FDFE5B00631EF3 /* RealmX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD7385721FDFD3000631EF3 /* RxSwift.framework in Frameworks */,
+				DBD7385521FDFD1400631EF3 /* Realm.framework in Frameworks */,
+				DBD7385321FDFD0700631EF3 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD7385A21FDFDC700631EF3 /* RxBlocking.framework in Frameworks */,
+				DBD7384C21FDFC2700631EF3 /* Quick.framework in Frameworks */,
+				DBD7384A21FDFC1B00631EF3 /* Nimble.framework in Frameworks */,
 				DB7698DD21FD6C4100617F83 /* RealmX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,10 +113,14 @@
 		DB7698C921FD6C4100617F83 = {
 			isa = PBXGroup;
 			children = (
+				DBD7385B21FDFDDD00631EF3 /* RxBlocking.framework */,
+				DBD7385021FDFCAF00631EF3 /* Quick.framework */,
+				DBD7384E21FDFC9C00631EF3 /* Nimble.framework */,
 				DB7698D521FD6C4100617F83 /* RealmX */,
 				DB7698E021FD6C4100617F83 /* RealmXTests */,
 				DB7698F221FD6CDF00617F83 /* Example */,
 				DB7698D421FD6C4100617F83 /* Products */,
+				DBD7384821FDFC1B00631EF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,8 +137,8 @@
 		DB7698D521FD6C4100617F83 /* RealmX */ = {
 			isa = PBXGroup;
 			children = (
-				DB7698D621FD6C4100617F83 /* RealmX.h */,
 				DB7698D721FD6C4100617F83 /* Info.plist */,
+				DBD7385D21FDFE5B00631EF3 /* RealmX.swift */,
 			);
 			path = RealmX;
 			sourceTree = "<group>";
@@ -110,6 +155,7 @@
 		DB7698F221FD6CDF00617F83 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				DB76990521FDB8BE00617F83 /* RealmX */,
 				DB7698F321FD6CDF00617F83 /* AppDelegate.swift */,
 				DB7698F521FD6CDF00617F83 /* ViewController.swift */,
 				DB7698F721FD6CDF00617F83 /* Main.storyboard */,
@@ -120,6 +166,19 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		DBD7384821FDFC1B00631EF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7385921FDFDC700631EF3 /* RxBlocking.framework */,
+				DBD7385621FDFD3000631EF3 /* RxSwift.framework */,
+				DBD7385421FDFD1400631EF3 /* Realm.framework */,
+				DBD7385221FDFD0700631EF3 /* RealmSwift.framework */,
+				DBD7384B21FDFC2700631EF3 /* Quick.framework */,
+				DBD7384921FDFC1B00631EF3 /* Nimble.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -127,7 +186,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB7698E421FD6C4100617F83 /* RealmX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +201,7 @@
 				DB7698D021FD6C4100617F83 /* Frameworks */,
 				DB7698D121FD6C4100617F83 /* Resources */,
 				DB76990421FD6D3300617F83 /* ShellScript */,
+				DBD7385821FDFD5800631EF3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,6 +219,7 @@
 				DB7698D821FD6C4100617F83 /* Sources */,
 				DB7698D921FD6C4100617F83 /* Frameworks */,
 				DB7698DA21FD6C4100617F83 /* Resources */,
+				DBD7384D21FDFC4500631EF3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -201,6 +261,7 @@
 				TargetAttributes = {
 					DB7698D221FD6C4100617F83 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					DB7698DB21FD6C4100617F83 = {
 						CreatedOnToolsVersion = 10.1;
@@ -252,6 +313,7 @@
 				DB7698FE21FD6CE000617F83 /* LaunchScreen.storyboard in Resources */,
 				DB7698FB21FD6CE000617F83 /* Assets.xcassets in Resources */,
 				DB7698F921FD6CDF00617F83 /* Main.storyboard in Resources */,
+				DB76990621FDB8BE00617F83 /* RealmX in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +354,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		DBD7385821FDFD5800631EF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -299,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD7385E21FDFE5B00631EF3 /* RealmX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +557,7 @@
 		DB7698E821FD6C4100617F83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -481,6 +565,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RealmX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,6 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Urotea.RealmX;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -499,6 +588,7 @@
 		DB7698E921FD6C4100617F83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -506,6 +596,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RealmX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,8 +618,13 @@
 		DB7698EB21FD6C4100617F83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T8ASAH3AJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RealmXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,8 +641,13 @@
 		DB7698EC21FD6C4100617F83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T8ASAH3AJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RealmXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
