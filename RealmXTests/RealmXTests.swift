@@ -12,7 +12,6 @@ import Nimble
 
 class RealmXTests: QuickSpec {
     override func spec() {
-        describe("") {
-        }
+        describe("") {}
     }
 }

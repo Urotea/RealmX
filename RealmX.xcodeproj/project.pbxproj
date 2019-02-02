@@ -22,9 +22,11 @@
 		DBD7385321FDFD0700631EF3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385221FDFD0700631EF3 /* RealmSwift.framework */; };
 		DBD7385521FDFD1400631EF3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385421FDFD1400631EF3 /* Realm.framework */; };
 		DBD7385721FDFD3000631EF3 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385621FDFD3000631EF3 /* RxSwift.framework */; };
-		DBD7385A21FDFDC700631EF3 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385921FDFDC700631EF3 /* RxBlocking.framework */; };
-		DBD7385C21FDFDDD00631EF3 /* RxBlocking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD7385B21FDFDDD00631EF3 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD7385E21FDFE5B00631EF3 /* RealmX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7385D21FDFE5B00631EF3 /* RealmX.swift */; };
+		DBDACD422203285800CA55A8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385621FDFD3000631EF3 /* RxSwift.framework */; };
+		DBDACD432203286C00CA55A8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385421FDFD1400631EF3 /* Realm.framework */; };
+		DBDACD442203287A00CA55A8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7385221FDFD0700631EF3 /* RealmSwift.framework */; };
+		DBDACD4A22033B9C00CA55A8 /* RealmX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7698D321FD6C4100617F83 /* RealmX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DBD7385C21FDFDDD00631EF3 /* RxBlocking.framework in CopyFiles */,
 				DBD7385121FDFCAF00631EF3 /* Quick.framework in CopyFiles */,
 				DBD7384F21FDFC9C00631EF3 /* Nimble.framework in CopyFiles */,
 			);
@@ -93,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD7385A21FDFDC700631EF3 /* RxBlocking.framework in Frameworks */,
 				DBD7384C21FDFC2700631EF3 /* Quick.framework in Frameworks */,
 				DBD7384A21FDFC1B00631EF3 /* Nimble.framework in Frameworks */,
 				DB7698DD21FD6C4100617F83 /* RealmX.framework in Frameworks */,
@@ -104,6 +104,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDACD4A22033B9C00CA55A8 /* RealmX.framework in Frameworks */,
+				DBDACD442203287A00CA55A8 /* RealmSwift.framework in Frameworks */,
+				DBDACD432203286C00CA55A8 /* Realm.framework in Frameworks */,
+				DBDACD422203285800CA55A8 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +243,7 @@
 				DB7698EE21FD6CDF00617F83 /* Frameworks */,
 				DB7698EF21FD6CDF00617F83 /* Resources */,
 				DB76990321FD6CF900617F83 /* ShellScript */,
+				DBDACD46220328A900CA55A8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -355,6 +360,26 @@
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		DBD7385821FDFD5800631EF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		DBDACD46220328A900CA55A8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -667,6 +692,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T8ASAH3AJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -685,6 +714,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T8ASAH3AJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
