@@ -2,3 +2,4 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
   - Pods
   - Example
+  - RealmXTests
