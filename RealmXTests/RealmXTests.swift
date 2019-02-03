@@ -35,19 +35,19 @@ class RealmXTests: QuickSpec {
                     let resultsDog = realm.objects(Dog.self)
                         .toObservable()
                         .skip(1) // first, realm emits no records.
-                    
+
                     // insert a dog 0.1 second after subscribing.(use toBlooking())
                     DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 0.1) {
                         let dog = Dog()
                         dog.age = 1
                         dog.name = "pochi"
-                        
+
                         let realm = try! Realm()
                         try! realm.write {
                             realm.add(dog)
                         }
                     }
-                    
+
                     let results = try! resultsDog.toBlocking().first()! // realm emits a records because a dog added.
                     expect(results).to(haveCount(1))
                     expect(results.first!.age) == 1
@@ -56,7 +56,7 @@ class RealmXTests: QuickSpec {
             }
         }
     }
-    
+
     private func deleteAll() {
         let realm = try! Realm()
         try! realm.write {

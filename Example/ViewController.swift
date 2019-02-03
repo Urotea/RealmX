@@ -18,21 +18,21 @@ class Dog: Object {
 }
 
 class ViewController: UIViewController {
-    @IBAction func ButtonTouchDown(_ sender: Any) {
+    @IBAction func buttonTouchDown(_ sender: Any) {
         // if button clicked, insert data.
         let realm = try! Realm()
-        
+
         let dog = Dog()
         dog.name = "tama"
         dog.age = 5
-        
+
         try! realm.write {
             realm.add(dog)
         }
     }
-    
+
     let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // deleteAllData
@@ -50,8 +50,9 @@ class ViewController: UIViewController {
         print("puppies.count is: \(puppies.count)") // => 0 because no dogs have been added to the Realm yet
 
         puppies.toObservable().subscribe(onNext: { (result: Results<Dog>) in
-            print("count in subscribe: \(result.count)") // => The first time subscribe, next time when a dog who has less than 2 years old is added.
-            print("name of dog in subscribe: \(result.first?.name)")
+            // The first time subscribe, next time when a dog who has less than 2 years old is added.
+            print("count in subscribe: \(result.count)")
+            print("name of dog in subscribe: \(String(describing: result.first?.name))")
         }).disposed(by: self.disposeBag)
 
         // Query and update from any thread
@@ -68,7 +69,7 @@ class ViewController: UIViewController {
                         // The first time subscribe, next time when a dog who has less than 6 year old is added.
                         print("is this main thread?: \(Thread.isMainThread)")
                         print("count in complex thread: \(result.count)")
-                        print("name in complex thread: \(result.first?.name)")
+                        print("name in complex thread: \(String(describing: result.first?.name))")
                     }).disposed(by: self.disposeBag)
             }
         }
