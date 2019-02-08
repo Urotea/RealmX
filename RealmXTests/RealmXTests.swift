@@ -91,8 +91,8 @@ class RealmXTests: QuickSpec {
                     dog.age = 1
                     dog.name = "pochi"
                     let realm = try! Realm()
-                    let results = realm.doInTransaction(object: [dog]) { realm, objectList in
-                        realm.add(objectList.first!)
+                    let results = realm.doInTransaction(object: [dog]) { realm, dogList in
+                        realm.add(dogList.first!)
                         }.toBlocking().materialize()
                     switch results {
                     case .completed:
@@ -116,8 +116,8 @@ class RealmXTests: QuickSpec {
                         .flatMap { dog -> Completable in
                             let mRealm = try! Realm()
                             return mRealm
-                                .doInTransaction(object: [dog]) { (realm: Realm, objectList: [Object]) in
-                                    realm.add(objectList.first!)
+                                .doInTransaction(object: [dog]) { (realm: Realm, dogList: [Dog]) in
+                                    realm.add(dogList.first!)
                                 }}
                             .toBlocking().materialize()
                     switch results {

@@ -54,9 +54,9 @@ public extension Realm {
     ///   - object: this is handed over to "inTransaction".
     ///   - inTransaction: this callback called in transaction.
     /// - Returns: RxSwift Completable.
-    public func doInTransaction(
-        object: [Object],
-        inTransaction: @escaping ((Realm, [Object]) -> Void)) -> Completable {
+    public func doInTransaction<Element: Object>(
+        object: [Element],
+        inTransaction: @escaping ((Realm, [Element]) -> Void)) -> Completable {
         return Completable.create { completable in
             do {
                 try self.write {

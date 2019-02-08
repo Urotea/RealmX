@@ -21,14 +21,15 @@ class ViewController: UIViewController {
     @IBAction func buttonTouchDown(_ sender: Any) {
         // if button clicked, insert data.
         let realm = try! Realm()
-
         let dog = Dog()
         dog.name = "tama"
         dog.age = 5
 
-        try! realm.write {
-            realm.add(dog)
-        }
+        realm.doInTransaction(object: [dog]) { (realm: Realm, dogList: [Object]) in
+            realm.add(dogList.first!)
+        }.subscribe(onCompleted: {
+            print("insert success.")
+        }).disposed(by: disposeBag)
     }
 
     let disposeBag = DisposeBag()
