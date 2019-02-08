@@ -1,3 +1,4 @@
 disabled_rules:
 - force_try
 - force_unwrapping
+- function_body_length

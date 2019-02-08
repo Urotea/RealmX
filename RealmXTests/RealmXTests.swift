@@ -54,6 +54,84 @@ class RealmXTests: QuickSpec {
                     expect(results.first!.name) == "pochi"
                 }
             }
+            context("there is a record.") {
+                beforeEach {
+                    let dog = Dog()
+                    dog.age = 1
+                    dog.name = "pochi"
+
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(dog)
+                    }
+                }
+                afterEach {
+                    self.deleteAll()
+                }
+                it("emits a record when subscribing.") {
+                    let realm = try! Realm()
+                    let results = try! realm.objects(Dog.self)
+                        .toObservable().toBlocking().first()!
+                    expect(results).to(haveCount(1))
+                    expect(results.first!.age) == 1
+                    expect(results.first!.name) == "pochi"
+                }
+            }
+        }
+        describe("doInTransaction can write and delete.") {
+            context("no records") {
+                beforeEach {
+                    self.deleteAll()
+                }
+                afterEach {
+                    self.deleteAll()
+                }
+                it("can add object.") {
+                    let dog = Dog()
+                    dog.age = 1
+                    dog.name = "pochi"
+                    let realm = try! Realm()
+                    let results = realm.doInTransaction(object: [dog]) { realm, dogList in
+                        realm.add(dogList.first!)
+                        }.toBlocking().materialize()
+                    switch results {
+                    case .completed:
+                        let realm = try! Realm()
+                        let ret = realm.objects(Dog.self)
+                        expect(ret).to(haveCount(1))
+                        expect(ret.first!.age) == 1
+                        expect(ret.first!.name) == "pochi"
+                    case .failed:
+                        fail()
+                    }
+                }
+                it("can add a object on background reactive stream.") {
+                    let results = Observable.just((1, "pochi"))
+                        .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                        .map { (age: Int, name: String) -> Dog in
+                            let dog = Dog()
+                            dog.age = age
+                            dog.name = name
+                            return dog }
+                        .flatMap { dog -> Completable in
+                            let mRealm = try! Realm()
+                            return mRealm
+                                .doInTransaction(object: [dog]) { (realm: Realm, dogList: [Dog]) in
+                                    realm.add(dogList.first!)
+                                }}
+                            .toBlocking().materialize()
+                    switch results {
+                    case .completed:
+                        let realm = try! Realm()
+                        let ret = realm.objects(Dog.self)
+                        expect(ret).to(haveCount(1))
+                        expect(ret.first!.age) == 1
+                        expect(ret.first!.name) == "pochi"
+                    case .failed:
+                        fail()
+                    }
+                }
+            }
         }
     }
 
