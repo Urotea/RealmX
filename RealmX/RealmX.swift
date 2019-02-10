@@ -57,9 +57,10 @@ public extension Realm {
     public func doInTransaction<Element: Object>(
         object: [Element],
         inTransaction: @escaping ((Realm, [Element]) -> Void)) -> Completable {
+        let config = self.configuration
         return Completable.create { completable in
             do {
-                try self.write {
+                try Realm(configuration: config).write {
                     inTransaction(self, object)
                 }
                 completable(.completed)
@@ -79,9 +80,10 @@ public extension Realm {
     public func doInTransaction<Element: Object>(
         results: Results<Element>,
         inTransaction: @escaping ((Realm, Results<Element>) -> Void)) -> Completable {
+        let config = self.configuration
         return Completable.create { completable in
             do {
-                try self.write {
+                try Realm(configuration: config).write {
                     inTransaction(self, results)
                 }
                 completable(.completed)
