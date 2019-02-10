@@ -39,12 +39,11 @@ TODO
 ### CocoaPods
 
 TODO
+## samples
 
-## toObservable
+### toObservable
 
 This API emits a event when Realm records changed.
-
-### samples
 
 ```swift
 let realm = try! Realm()
@@ -67,12 +66,10 @@ DispatchQueue.global(qos: .background).async {
 }
 ```
 
-## doInTransaction
+### doInTransaction
 
 This API provides Realm transaction on any stream.  
 In particular, this is useful for getting json from the network and writing it to Realm.
-
-### samples
 
 ```swift
 let realm = try! Realm()
