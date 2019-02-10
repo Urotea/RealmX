@@ -39,7 +39,7 @@ doInTransaction<Element: Object>(
 
 ### CocoaPods
 
-- Add pod 'RealmX' to your Podfile.
+- Add pod 'RealmX-rX' to your Podfile.
 - Run `pod update`
 
 ## samples
@@ -87,11 +87,14 @@ realm.doInTransaction(object: [dog]) { (realm: Realm, dogList: [Object]) in
 })
 ```
 
-This show the most power when you use WebAPI in Rx stream.
+This show the most power when you use WebAPI(e.g. [Moya](https://github.com/Moya/Moya)) in Rx stream.
 
 ```swift
-getJson()
+let provider = MoyaProvider<Dogs>()
+provider
     .rx
+    .request(.get)
+    .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
     .map{
         let dog = Dog()
         dog.age = $0.age
@@ -103,7 +106,6 @@ getJson()
             realm.add(dogList.first!)
         }
     }
-    .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
     .subscribe {}
 ```
 

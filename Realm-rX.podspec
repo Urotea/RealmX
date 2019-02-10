@@ -15,8 +15,8 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "RealmX"
-  spec.version      = "1.0.0"
+  spec.name         = "Realm-rX"
+  spec.version      = "1.0.1"
   spec.summary      = "Realm + RxSwift eXtensions"
 
   # This description is used to generate tags and improve search results.
