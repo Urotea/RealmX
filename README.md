@@ -34,11 +34,14 @@ doInTransaction<Element: Object>(
 
 ### Carthage
 
-TODO
+- Add github "Urotea/RealmX" to your Cartfile.
+- Run `carthage update`
 
 ### CocoaPods
 
-TODO
+- Add pod 'RealmX' to your Podfile.
+- Run `pod update`
+
 ## samples
 
 ### toObservable
