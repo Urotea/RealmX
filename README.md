@@ -113,6 +113,9 @@ To run example app, clone this repository and run `carthage bootstrap`.
 And then, you can run exsample app.  
 Further, if you look RealmXTests directory, you can more understand how to use.
 
+## Requirements
+iOS 12.0 or later
+
 ## License
 
 RealmX is available under the MIT license.
