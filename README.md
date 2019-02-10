@@ -39,7 +39,7 @@ doInTransaction<Element: Object>(
 
 ### CocoaPods
 
-- Add pod 'RealmX-rX' to your Podfile.
+- Add pod 'Realm-rX' to your Podfile.
 - Run `pod update`
 
 ## samples
