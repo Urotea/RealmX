@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Realm-rX"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "Realm + RxSwift eXtensions"
   spec.swift_version = '4.0'
   # This description is used to generate tags and improve search results.
